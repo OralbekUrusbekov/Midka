@@ -12,7 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GroupDto {
+    private Long id;
     private String name;
     private String type;
-    private List<Student> students;
+    private List<StudentDto> students;
 }

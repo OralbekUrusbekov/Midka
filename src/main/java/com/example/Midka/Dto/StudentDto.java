@@ -13,8 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentDto {
+    private Long id;
     private String name;
     private int course;
-    private List<Book> books;
-    private List<Group> groups;
+    private List<BookDto> books;
+    private List<GroupDto> groups;
 }

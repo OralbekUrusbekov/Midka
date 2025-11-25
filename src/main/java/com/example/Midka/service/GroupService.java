@@ -1,11 +1,12 @@
 package com.example.Midka.service;
 
-import com.example.Midka.Dto.BookDto;
 import com.example.Midka.Dto.GroupDto;
+import java.util.List;
 
 public interface GroupService {
-    GroupDto getAll();
-    GroupDto addOne(BookDto dto);
-    GroupDto update(Long id, GroupDto dto);
-    void delete(Long id);
+
+    List<GroupDto> getAll();               // Барлық топтар
+    GroupDto addOne(GroupDto dto);         // Топ қосу
+    GroupDto update(Long id, GroupDto dto);// Топты жаңарту
+    void delete(Long id);                  // Топты өшіру
 }

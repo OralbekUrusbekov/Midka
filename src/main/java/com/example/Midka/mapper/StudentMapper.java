@@ -14,5 +14,6 @@ public interface StudentMapper {
     Student toEntity(StudentDto bookDto);
 
     List<StudentDto> toDtoList(List<Student> bookList);
+    List<Student> toEntityList(List<StudentDto> bookList);
 
 }
