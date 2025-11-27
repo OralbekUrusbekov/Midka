@@ -29,6 +29,11 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public GroupDto getbyid(Long id){
+        return groupMapper.toDto(groupRepository.findById(id).orElse(null));
+    }
+
+    @Override
     public GroupDto addOne(GroupDto dto) {
         Group group = new Group();
         group.setName(dto.getName());

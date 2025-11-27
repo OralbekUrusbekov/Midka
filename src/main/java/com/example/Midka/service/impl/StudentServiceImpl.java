@@ -4,7 +4,6 @@ import com.example.Midka.Dto.StudentDto;
 import com.example.Midka.mapper.BookMapper;
 import com.example.Midka.mapper.GroupMapper;
 import com.example.Midka.mapper.StudentMapper;
-import com.example.Midka.model.Book;
 import com.example.Midka.model.Student;
 import com.example.Midka.repositories.BookRepository;
 import com.example.Midka.repositories.GroupRepository;
@@ -37,6 +36,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto addOne(StudentDto dto) {
         return studentMapper.toDto(studentRepository.save(studentMapper.toEntity(dto)));
+    }
+
+
+    @Override
+    public StudentDto findbyid(Long id){
+        return  studentMapper.toDto(studentRepository.findById(id).orElse(null));
     }
 
     @Override

@@ -20,6 +20,13 @@ public class BookController {
     private ResponseEntity<List<BookDto>> getall(){
         return ResponseEntity.ok(bookServiceImls.getAll());
     }
+
+    @GetMapping("/{id}")
+    private ResponseEntity<BookDto> getbyid(@PathVariable Long id){
+        return ResponseEntity.ok(bookServiceImls.getbyid(id));
+
+    }
+
     @PostMapping()
     private ResponseEntity<BookDto> add(@RequestBody BookDto bookDto){
         return ResponseEntity.ok((bookServiceImls.addOne(bookDto)));

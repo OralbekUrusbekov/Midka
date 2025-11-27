@@ -1,6 +1,7 @@
 package com.example.Midka.controller;
 
 
+import com.example.Midka.Dto.BookDto;
 import com.example.Midka.Dto.StudentDto;
 import com.example.Midka.service.impl.StudentServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,11 @@ public class StudentController {
     @PostMapping()
     private ResponseEntity<StudentDto> addStudent(@RequestBody StudentDto studentDto){
         return ResponseEntity.ok((studentService.addOne(studentDto)));
+    }
+    @GetMapping("/{id}")
+    private ResponseEntity<StudentDto> getbyid(@PathVariable Long id){
+        return ResponseEntity.ok(studentService.findbyid(id));
+
     }
 
     @PutMapping("/{id}")

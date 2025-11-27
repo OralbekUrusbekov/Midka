@@ -1,7 +1,9 @@
 package com.example.Midka.controller;
 
+import com.example.Midka.Dto.BookDto;
 import com.example.Midka.Dto.GroupDto;
 import com.example.Midka.service.GroupService;
+import com.example.Midka.service.impl.GroupServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +15,17 @@ import java.util.List;
 @RequestMapping("/group")
 public class GroupController {
 
-    private final GroupService groupService;
+    private final GroupServiceImpl groupService;
 
     @GetMapping
     public ResponseEntity<List<GroupDto>> getAll() {
+
         return ResponseEntity.ok(groupService.getAll());
+    }
+    @GetMapping("/{id}")
+    private ResponseEntity<GroupDto> getbyid(@PathVariable Long id){
+        return ResponseEntity.ok(groupService.getbyid(id));
+
     }
 
     @PostMapping
